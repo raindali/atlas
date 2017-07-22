@@ -10,5 +10,5 @@ The minimum requirements to run the quick start are:
 * A java-based project management software like [Maven](https://maven.apache.org/) or [Gradle](http://gradle.org/).
 
 ## Quick Start
-* [atlas-core](docs/wiki/juice-core.md)
-* [atlas-aop](docs/wiki/juice-aop.md)
+* [atlas-core](docs/wiki/atlas-core.md)
+* [atlas-aop](docs/wiki/atlas-aop.md)

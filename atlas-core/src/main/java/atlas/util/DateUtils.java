@@ -1,4 +1,4 @@
-package atlas.core.util;
+package atlas.util;
 
 import org.joda.time.*;
 import org.joda.time.format.DateTimeFormat;

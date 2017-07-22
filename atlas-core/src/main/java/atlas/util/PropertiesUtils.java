@@ -1,4 +1,4 @@
-package atlas.core.util;
+package atlas.util;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,8 +1,8 @@
 package atlas.core.extension;
 
-import atlas.core.util.ClassUtils;
-import atlas.core.util.ReflectionUtils;
-import atlas.core.util.StringUtils;
+import atlas.util.ClassUtils;
+import atlas.util.ReflectionUtils;
+import atlas.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.beans.IntrospectionException;

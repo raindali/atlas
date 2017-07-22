@@ -1,4 +1,4 @@
-package atlas.core.util;
+package atlas.util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

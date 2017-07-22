@@ -1,6 +1,6 @@
-package atlas.core.util.concurrent;
+package atlas.util.concurrent;
 
-import atlas.core.util.Assert;
+import atlas.util.Assert;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

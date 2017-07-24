@@ -1,5 +1,7 @@
 package atlas.util;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * ${DESCRIPTION}
  *
@@ -99,5 +101,13 @@ public abstract class StringUtils {
             }
         }
         return sb.toString();
+    }
+
+    public static byte[] stringToByteArray(String data) {
+        return data.getBytes(StandardCharsets.UTF_8);
+    }
+
+    public static String byteArrayToString(byte[] data) {
+        return new String(data, StandardCharsets.UTF_8);
     }
 }

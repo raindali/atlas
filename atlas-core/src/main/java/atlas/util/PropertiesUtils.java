@@ -9,11 +9,11 @@ import java.util.Properties;
 /**
  *
  * @author Ricky Fung
- * @date 2016-08-18 14:27
  */
 public class PropertiesUtils {
 
-	public static Properties load(File file) throws IOException{
+	public static Properties load(File file) throws IOException {
+		Assert.notNull(file);
 		InputStream in = null;
 		try {
 			in = new FileInputStream(file);
@@ -25,7 +25,14 @@ public class PropertiesUtils {
 		}
 	}
 
-	public static Properties load(String path) throws IOException{
+	/**
+	 * com/mindflow/config.properties
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
+	public static Properties load(String path) throws IOException {
+		Assert.notNull(path);
 		InputStream in = null;
 		try {
 			in = ClassUtils.getDefaultClassLoader().getResourceAsStream(path);

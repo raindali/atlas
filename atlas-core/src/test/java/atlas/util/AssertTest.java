@@ -17,7 +17,7 @@ public class AssertTest {
         try {
             Assert.isTrue(success);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -31,7 +31,7 @@ public class AssertTest {
         try {
             Assert.isNull(str);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -45,7 +45,7 @@ public class AssertTest {
         try {
             Assert.notNull(str);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -59,7 +59,7 @@ public class AssertTest {
         try {
             Assert.notEmpty(str);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -73,7 +73,7 @@ public class AssertTest {
         try {
             Assert.notBlank(str);
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
 }

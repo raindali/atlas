@@ -13,6 +13,7 @@
 
   <modules>
 	<module>atlas-core</module>
+    <module>atlas-beans</module>
     <module>atlas-aop</module>
     <module>atlas-jdbc</module>
   </modules>

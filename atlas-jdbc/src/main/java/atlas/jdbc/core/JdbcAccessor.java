@@ -1,4 +1,4 @@
-package atlas.jdbc;
+package atlas.jdbc.core;
 
 import atlas.jdbc.exception.JdbcConnectionException;
 
@@ -13,7 +13,7 @@ import java.sql.Types;
  *
  * @author Ricky Fung
  */
-public abstract class JdbcBase {
+public abstract class JdbcAccessor {
     private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource) {

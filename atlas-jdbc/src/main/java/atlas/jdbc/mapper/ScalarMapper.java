@@ -1,6 +1,6 @@
 package atlas.jdbc.mapper;
 
-import atlas.jdbc.RowMapper;
+import atlas.jdbc.core.RowMapper;
 import atlas.util.StringUtils;
 import java.sql.ResultSet;
 import java.sql.SQLException;

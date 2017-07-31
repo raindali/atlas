@@ -1,4 +1,4 @@
-package atlas.jdbc;
+package atlas.jdbc.core;
 
 import atlas.jdbc.exception.DataAccessException;
 import java.sql.Connection;

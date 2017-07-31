@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>atlas-jdbc</artifactId>
+    <artifactId>atlas-beans</artifactId>
     <packaging>jar</packaging>
 
-    <name>atlas-jdbc</name>
+    <name>atlas-beans</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -21,11 +21,6 @@
         <dependency>
             <groupId>com.mindflow</groupId>
             <artifactId>atlas-core</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.mindflow</groupId>
-            <artifactId>atlas-beans</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

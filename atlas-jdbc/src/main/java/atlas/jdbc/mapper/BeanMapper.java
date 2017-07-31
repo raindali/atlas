@@ -1,8 +1,6 @@
 package atlas.jdbc.mapper;
 
-import atlas.jdbc.RowMapper;
-import atlas.jdbc.util.MapperUtils;
-
+import atlas.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -11,15 +9,15 @@ import java.sql.SQLException;
  *
  * @author Ricky Fung
  */
-public class BeanMapper<T> implements RowMapper<T> {
-    private Class<? extends T> requiredType;
+public class BeanMapper<T> extends AbstractBeanMapper<T> implements RowMapper<T> {
 
-    public BeanMapper(Class<? extends T> requiredType){
-        this.requiredType = requiredType;
+    public BeanMapper(Class<T> requiredType){
+        super(requiredType);
     }
 
     @Override
     public T mapRow(ResultSet rs) throws SQLException {
-        return MapperUtils.toBean(rs, requiredType);
+        return rsToBean(rs);
     }
+
 }

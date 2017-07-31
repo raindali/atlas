@@ -1,4 +1,4 @@
-package atlas.jdbc;
+package atlas.jdbc.core;
 
 import atlas.jdbc.exception.DataAccessException;
 import atlas.jdbc.util.DbUtils;
@@ -11,7 +11,7 @@ import java.sql.*;
  *
  * @author Ricky Fung
  */
-public class JdbcTemplate extends JdbcBase implements JdbcOperations {
+public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
     private final Logger logger = LoggerFactory.getLogger(JdbcTemplate.class);
 
     @Override

@@ -1,4 +1,4 @@
-package atlas.jdbc;
+package atlas.jdbc.core;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

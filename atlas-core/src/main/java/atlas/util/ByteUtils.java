@@ -31,7 +31,7 @@ public abstract class ByteUtils {
     }
 
     public static int byteArrayToInt(byte[] data) {
-        Assert.isTrue(data.length==INT_BYTE_SIZE);
+        Validator.isTrue(data.length==INT_BYTE_SIZE);
         return data[3] & 0xFF |
                 (data[2] & 0xFF) << 8 |
                 (data[1] & 0xFF) << 16 |
@@ -39,7 +39,7 @@ public abstract class ByteUtils {
     }
 
     public static int byteArrayToInt(byte[] data, int from, int len) {
-        Assert.isTrue(len==INT_BYTE_SIZE);
+        Validator.isTrue(len==INT_BYTE_SIZE);
         int res = 0, temp = 0;
         for (int i = 0; i < 4; i++) {
             res <<= 8;

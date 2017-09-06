@@ -67,7 +67,7 @@ public abstract class ClassUtils {
      * @param classLoader the ClassLoader to potentially cache metadata in
      */
     public static boolean isCacheSafe(Class<?> clazz, ClassLoader classLoader) {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
         try {
             ClassLoader target = clazz.getClassLoader();
             if (target == null) {
@@ -99,7 +99,7 @@ public abstract class ClassUtils {
      * is defined in the default package
      */
     public static String getPackageName(Class<?> clazz) {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
         return getPackageName(clazz.getName());
     }
 
@@ -111,7 +111,7 @@ public abstract class ClassUtils {
      * is defined in the default package
      */
     public static String getPackageName(String fqClassName) {
-        Assert.notNull(fqClassName, "Class name must not be null");
+        Validator.notNull(fqClassName, "Class name must not be null");
         int lastDotIndex = fqClassName.lastIndexOf(PACKAGE_SEPARATOR);
         return (lastDotIndex != -1 ? fqClassName.substring(0, lastDotIndex) : "");
     }
@@ -123,7 +123,7 @@ public abstract class ClassUtils {
      * @throws IllegalArgumentException if the className is empty
      */
     public static String getShortName(String className) {
-        Assert.notEmpty(className, "Class name must not be empty");
+        Validator.notEmpty(className, "Class name must not be empty");
         int lastDotIndex = className.lastIndexOf(PACKAGE_SEPARATOR);
         int nameEndIndex = className.indexOf(CGLIB_CLASS_SEPARATOR);
         if (nameEndIndex == -1) {
@@ -150,7 +150,7 @@ public abstract class ClassUtils {
      * @return the qualified name of the class
      */
     public static String getQualifiedName(Class<?> clazz) {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
         if (clazz.isArray()) {
             return getQualifiedNameForArray(clazz);
         }

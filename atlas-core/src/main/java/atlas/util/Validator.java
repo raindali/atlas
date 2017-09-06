@@ -5,7 +5,7 @@ package atlas.util;
  *
  * @author Ricky Fung
  */
-public abstract class Assert {
+public abstract class Validator {
 
     public static void isTrue(boolean expression, String message) {
         if (!expression) {

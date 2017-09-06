@@ -25,8 +25,8 @@ public abstract class FileUtils {
     }
 
     public static void copyRecursively(File src, File dest) throws IOException {
-        Assert.isTrue(src != null && (src.isDirectory() || src.isFile()), "Source File must denote a directory or file");
-        Assert.notNull(dest, "Destination File must not be null");
+        Validator.isTrue(src != null && (src.isDirectory() || src.isFile()), "Source File must denote a directory or file");
+        Validator.notNull(dest, "Destination File must not be null");
         doCopyRecursively(src, dest);
     }
 
@@ -54,15 +54,15 @@ public abstract class FileUtils {
     }
 
     public static int copy(File in, File out) throws IOException {
-        Assert.notNull(in, "No input File specified");
-        Assert.notNull(out, "No output File specified");
+        Validator.notNull(in, "No input File specified");
+        Validator.notNull(out, "No output File specified");
         return copy(new BufferedInputStream(new FileInputStream(in)),
                 new BufferedOutputStream(new FileOutputStream(out)));
     }
 
     public static int copy(InputStream in, OutputStream out) throws IOException {
-        Assert.notNull(in, "No InputStream specified");
-        Assert.notNull(out, "No OutputStream specified");
+        Validator.notNull(in, "No InputStream specified");
+        Validator.notNull(out, "No OutputStream specified");
         try {
             return StreamUtils.copy(in, out);
         } finally {

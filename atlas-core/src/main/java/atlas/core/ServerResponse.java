@@ -16,8 +16,8 @@ public class ServerResponse<T> implements Serializable {
 
     /**0~999为系统预留code, 业务自定义code建议1000及以上**/
     public static final int SUCCESS = 0;    //业务处理成功
-    public static final int FAILURE = 400; //业务处理失败
-    public static final int SYS_ERROR = 500;   //系统出错
+    public static final int SYS_ERROR = 10;   //系统出错
+    public static final int SYS_MAINTENANCE = 11; //系统停服
 
     public ServerResponse(){
         this(SUCCESS, "", null);
@@ -35,11 +35,11 @@ public class ServerResponse<T> implements Serializable {
         return new ServerResponse(SUCCESS, msg, data);
     }
 
-    public static <T> ServerResponse<T> buildFailureResponse(String msg){
-        return new ServerResponse(FAILURE, msg, null);
+    public static <T> ServerResponse<T> buildFailureResponse(int code, String msg){
+        return new ServerResponse(code, msg, null);
     }
-    public static <T> ServerResponse<T> buildFailureResponse(String msg, T data){
-        return new ServerResponse(FAILURE, msg, data);
+    public static <T> ServerResponse<T> buildFailureResponse(int code, String msg, T data){
+        return new ServerResponse(code, msg, data);
     }
 
     public static <T> ServerResponse<T> buildSysErrorResponse(String msg){

@@ -2,7 +2,7 @@ package atlas.jdbc.core;
 
 import atlas.jdbc.exception.DataAccessException;
 import atlas.jdbc.util.DbUtils;
-import atlas.util.Assert;
+import atlas.util.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.sql.*;
@@ -45,9 +45,9 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
     }
 
     private  <T> T query(Connection conn, boolean closeConn, String sql, RowMapper<T> mapper, Object... params) throws DataAccessException {
-        Assert.notNull(conn, "Connection object must not be null");
-        Assert.notEmpty(sql, "sql must not be null");
-        Assert.notNull(mapper, "RowMapper must not be null");
+        Validator.notNull(conn, "Connection object must not be null");
+        Validator.notEmpty(sql, "sql must not be null");
+        Validator.notNull(mapper, "RowMapper must not be null");
 
         if (logger.isDebugEnabled()) {
             logger.debug("Executing SQL query [" + sql + "]");
@@ -73,9 +73,9 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
     }
 
     private <T> T insert(Connection conn, boolean closeConn, String sql, RowMapper<T> mapper, Object... params) throws DataAccessException {
-        Assert.notNull(conn, "Connection object must not be null");
-        Assert.notEmpty(sql, "sql must not be null");
-        Assert.notNull(mapper, "RowMapper must not be null");
+        Validator.notNull(conn, "Connection object must not be null");
+        Validator.notEmpty(sql, "sql must not be null");
+        Validator.notNull(mapper, "RowMapper must not be null");
 
         if (logger.isDebugEnabled()) {
             logger.debug("Executing SQL insert [" + sql + "]");
@@ -104,8 +104,8 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
     }
 
     private int update(Connection conn, boolean closeConn, String sql, Object... params) throws DataAccessException {
-        Assert.notNull(conn, "Connection object must not be null");
-        Assert.notEmpty(sql, "sql must not be null");
+        Validator.notNull(conn, "Connection object must not be null");
+        Validator.notEmpty(sql, "sql must not be null");
 
         if (logger.isDebugEnabled()) {
             logger.debug("Executing SQL update [" + sql + "]");

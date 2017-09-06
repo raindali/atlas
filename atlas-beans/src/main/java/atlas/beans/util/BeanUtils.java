@@ -2,7 +2,7 @@ package atlas.beans.util;
 
 import atlas.beans.exception.BeanException;
 import atlas.beans.exception.BeanInitializationException;
-import atlas.util.Assert;
+import atlas.util.Validator;
 import atlas.util.ReflectionUtils;
 
 import java.beans.BeanInfo;
@@ -38,7 +38,7 @@ public abstract class BeanUtils {
 
 
     public static <T> T instantiate(Class<T> clazz) throws BeanInitializationException {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
         if(clazz.isInterface()) {
             throw new BeanInitializationException(clazz, "Specified class is an interface");
         } else {
@@ -53,7 +53,7 @@ public abstract class BeanUtils {
     }
 
     public static <T> T instantiateClass(Class<T> clazz) throws BeanInitializationException {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
         if(clazz.isInterface()) {
             throw new BeanInitializationException(clazz, "Specified class is an interface");
         } else {
@@ -66,7 +66,7 @@ public abstract class BeanUtils {
     }
 
     public static <T> T instantiateClass(Constructor<T> ctor, Object... args) throws BeanInitializationException {
-        Assert.notNull(ctor, "Constructor must not be null");
+        Validator.notNull(ctor, "Constructor must not be null");
         try {
             ReflectionUtils.makeAccessible(ctor);
             return ctor.newInstance(args);

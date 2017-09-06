@@ -13,7 +13,7 @@ import java.util.Properties;
 public class PropertiesUtils {
 
 	public static Properties load(File file) throws IOException {
-		Assert.notNull(file);
+		Validator.notNull(file);
 		InputStream in = null;
 		try {
 			in = new FileInputStream(file);
@@ -32,7 +32,7 @@ public class PropertiesUtils {
 	 * @throws IOException
 	 */
 	public static Properties load(String path) throws IOException {
-		Assert.notNull(path);
+		Validator.notNull(path);
 		InputStream in = null;
 		try {
 			in = ClassUtils.getDefaultClassLoader().getResourceAsStream(path);

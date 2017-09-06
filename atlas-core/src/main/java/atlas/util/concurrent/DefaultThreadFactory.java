@@ -1,6 +1,6 @@
 package atlas.util.concurrent;
 
-import atlas.util.Assert;
+import atlas.util.Validator;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -37,8 +37,8 @@ public class DefaultThreadFactory implements ThreadFactory {
     }
 
     public DefaultThreadFactory(String poolName, boolean daemon, int priority, ThreadGroup threadGroup) {
-        Assert.notBlank(poolName);
-        Assert.notNull(threadGroup);
+        Validator.notBlank(poolName);
+        Validator.notNull(threadGroup);
         if (priority < Thread.MIN_PRIORITY || priority > Thread.MAX_PRIORITY) {
             throw new IllegalArgumentException(
                     "priority: " + priority + " (expected: Thread.MIN_PRIORITY <= priority <= Thread.MAX_PRIORITY)");

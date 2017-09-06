@@ -11,11 +11,11 @@ public class AssertTest {
     public void testIsTrue() {
 
         boolean success = true;
-        Assert.isTrue(success);
+        Validator.isTrue(success);
 
         success = false;
         try {
-            Assert.isTrue(success);
+            Validator.isTrue(success);
         } catch (Exception e) {
 
         }
@@ -25,11 +25,11 @@ public class AssertTest {
     public void testIsNull() {
 
         String str = null;
-        Assert.isNull(str);
+        Validator.isNull(str);
 
         str = "";
         try {
-            Assert.isNull(str);
+            Validator.isNull(str);
         } catch (Exception e) {
 
         }
@@ -39,11 +39,11 @@ public class AssertTest {
     public void testNotNull() {
 
         String str = "";
-        Assert.notNull(str);
+        Validator.notNull(str);
 
         str = null;
         try {
-            Assert.notNull(str);
+            Validator.notNull(str);
         } catch (Exception e) {
 
         }
@@ -53,11 +53,11 @@ public class AssertTest {
     public void testNotEmpty() {
 
         String str = "aa";
-        Assert.notEmpty(str);
+        Validator.notEmpty(str);
 
         str = "";
         try {
-            Assert.notEmpty(str);
+            Validator.notEmpty(str);
         } catch (Exception e) {
 
         }
@@ -67,11 +67,11 @@ public class AssertTest {
     public void testNotBlank() {
 
         String str = "aa";
-        Assert.notBlank(str);
+        Validator.notBlank(str);
 
         str = " ";
         try {
-            Assert.notBlank(str);
+            Validator.notBlank(str);
         } catch (Exception e) {
 
         }

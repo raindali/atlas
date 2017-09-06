@@ -29,8 +29,8 @@ public abstract class ReflectionUtils {
      * @return the corresponding Field object, or {@code null} if not found
      */
     public static Field findField(Class<?> clazz, String name, Class<?> type) {
-        Assert.notNull(clazz, "Class must not be null");
-        Assert.isTrue(name != null || type != null, "Either name or type of the field must be specified");
+        Validator.notNull(clazz, "Class must not be null");
+        Validator.isTrue(name != null || type != null, "Either name or type of the field must be specified");
         Class<?> searchType = clazz;
         while (Object.class != searchType && searchType != null) {
             Field[] fields = clazz.getDeclaredFields();
@@ -88,8 +88,8 @@ public abstract class ReflectionUtils {
      * @return the Method object, or {@code null} if none found
      */
     public static Method findMethod(Class<?> clazz, String name, Class<?>... paramTypes) {
-        Assert.notNull(clazz, "Class must not be null");
-        Assert.notNull(name, "Method name must not be null");
+        Validator.notNull(clazz, "Class must not be null");
+        Validator.notNull(name, "Method name must not be null");
         Class<?> searchType = clazz;
         while (searchType != null) {
             Method[] methods = (searchType.isInterface() ? searchType.getMethods() : getDeclaredMethods(searchType));
@@ -114,7 +114,7 @@ public abstract class ReflectionUtils {
      * @see Class#getDeclaredMethods()
      */
     private static Method[] getDeclaredMethods(Class<?> clazz) {
-        Assert.notNull(clazz, "Class must not be null");
+        Validator.notNull(clazz, "Class must not be null");
 
         Method[] declaredMethods = clazz.getDeclaredMethods();
         List<Method> defaultMethods = findConcreteMethodsOnInterfaces(clazz);
